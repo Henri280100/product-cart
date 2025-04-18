@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   ArrowUpRight,
@@ -101,9 +101,9 @@ function ProductCard({
 
   return (
     <section className="mb-12">
-      <div className="flex flex-col space-y-4 mb-6">
+      <div className="flex flex-col space-y-3 sm:space-y-4 mb-4 sm:mb-6">
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-bold pb-2 border-b-2 border-primary">
+          <h2 className="text-xl sm:text-2xl font-bold pb-1 sm:pb-2 border-b-2 border-primary">
             {title}
           </h2>
 
@@ -121,7 +121,12 @@ function ProductCard({
 
         <div className="flex items-center justify-between">
           <div className="overflow-x-auto pb-1 sm:pb-2 -mx-1 scrollbar-hide w-full sm:w-auto">
-            <Tabs defaultValue="all" value={activeBrand} onValueChange={setActiveBrand} className="w-full">
+            <Tabs
+              defaultValue="all"
+              value={activeBrand}
+              onValueChange={setActiveBrand}
+              className="w-full"
+            >
               <TabsList className="h-7 sm:h-9 bg-muted/50 min-w-full sm:min-w-0">
                 {displayedBrands.map((brand) => (
                   <TabsTrigger
@@ -149,12 +154,11 @@ function ProductCard({
 
           <Button
             variant="outline"
-            className="hover:bg-primary hover:text-primary-foreground transition-colors sm:hidden ml-2 flex-shrink-0"
+            className="hover:bg-primary hover:text-primary-foreground transition-colors sm:hidden ml-2 flex-shrink-0 text-xs px-2 py-1 h-7"
             size="sm"
             onClick={onViewMore}
           >
-            <span className="sr-only sm:not-sr-only">View All</span>
-            <ChevronRight className="sm:ml-1 h-3 w-3" />
+            View All
           </Button>
         </div>
       </div>
