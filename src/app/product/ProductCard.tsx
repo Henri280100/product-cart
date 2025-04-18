@@ -108,27 +108,25 @@ function ProductCard({
 
           <Button
             variant="outline"
+            size="sm"
             className="hover:bg-primary hover:text-primary-foreground transition-colors hidden sm:flex"
             onClick={onViewMore}
           >
-            View More <ChevronRight className="ml-1 h-4 w-4" />
+            <span className="hidden md:inline">View More</span>
+            <span className="inline md:hidden">More</span>
+            <ChevronRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
           </Button>
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="overflow-x-auto pb-2 -mx-1 scrollbar-hide">
-            <Tabs
-              defaultValue="all"
-              value={activeBrand}
-              onValueChange={setActiveBrand}
-              className="w-full"
-            >
-              <TabsList className="h-9 bg-muted/50">
+          <div className="overflow-x-auto pb-1 sm:pb-2 -mx-1 scrollbar-hide w-full sm:w-auto">
+            <Tabs defaultValue="all" value={activeBrand} onValueChange={setActiveBrand} className="w-full">
+              <TabsList className="h-7 sm:h-9 bg-muted/50 min-w-full sm:min-w-0">
                 {displayedBrands.map((brand) => (
                   <TabsTrigger
                     key={brand}
                     value={brand}
-                    className="text-xs sm:text-sm capitalize px-3 py-1.5"
+                    className="text-xs sm:text-sm capitalize px-2 sm:px-3 py-1 sm:py-1.5 whitespace-nowrap"
                   >
                     {brand}
                   </TabsTrigger>
@@ -139,7 +137,7 @@ function ProductCard({
                     variant="ghost"
                     size="sm"
                     onClick={() => setShowAllBrands(true)}
-                    className="text-xs sm:text-sm h-7 px-2"
+                    className="text-xs sm:text-sm h-6 sm:h-7 px-1 sm:px-2 whitespace-nowrap"
                   >
                     More +
                   </Button>
@@ -150,11 +148,12 @@ function ProductCard({
 
           <Button
             variant="outline"
-            className="hover:bg-primary hover:text-primary-foreground transition-colors sm:hidden"
+            className="hover:bg-primary hover:text-primary-foreground transition-colors sm:hidden ml-2 flex-shrink-0"
             size="sm"
             onClick={onViewMore}
           >
-            View All
+            <span className="sr-only sm:not-sr-only">View All</span>
+            <ChevronRight className="sm:ml-1 h-3 w-3" />
           </Button>
         </div>
       </div>
