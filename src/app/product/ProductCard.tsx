@@ -1,6 +1,7 @@
 'use client'
 
 import {
+  ArrowUpRight,
   Check,
   ChevronRight,
   Eye,
@@ -114,7 +115,7 @@ function ProductCard({
           >
             <span className="hidden md:inline">View More</span>
             <span className="inline md:hidden">More</span>
-            <ChevronRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
+            <ArrowUpRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
           </Button>
         </div>
 
